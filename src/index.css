@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&family=Noto+Sans+Myanmar:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0a0f1e;
+  --color-ink-2: #10182c;
+  --color-panel: #141d33;
+  --color-gold: #f2b705;
+  --color-gold-2: #ffd35c;
+  --color-jade: #22c19a;
+  --color-crimson: #e2432b;
+  --color-mist: #9aa5c4;
+  --color-paper: #f6f1e4;
+
+  --font-display: 'Kanit', 'Noto Sans Myanmar', sans-serif;
+  --font-body: 'Noto Sans Myanmar', 'Kanit', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-body);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+::-webkit-scrollbar-thumb {
+  background: #2a3554;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.bg-noise {
+  background-image: radial-gradient(circle at 20% 20%, rgba(242,183,5,0.08), transparent 40%),
+    radial-gradient(circle at 80% 0%, rgba(34,193,154,0.10), transparent 45%),
+    radial-gradient(circle at 50% 100%, rgba(226,67,43,0.08), transparent 40%);
+}
+
+.chip {
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+@keyframes dash {
+  to { stroke-dashoffset: 0; }
+}
+.line-anim {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: dash 2.4s ease forwards;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.4); }
+}
+.pulse-dot {
+  animation: pulse-dot 1.6s ease-in-out infinite;
+}
